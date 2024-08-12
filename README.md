@@ -1,4 +1,4 @@
-# Getting Started with Create React App
+# String Calculator React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -41,30 +41,27 @@ You don't have to ever use `eject`. The curated feature set is suitable for smal
 
 ## Learn More
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Input: a string of comma-separated numbers
+Output: an integer, sum of the numbers
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Examples:
 
-### Code Splitting
+1. Input: “”, Output: 0
+2. Input: “1”, Output: 1
+3. Input: “1,5”, Output: 6
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Allow the add method to handle new lines between numbers (instead of commas).
+("1\n2,3" should return 6)
 
-### Analyzing the Bundle Size
+Support different delimiters:
+To change the delimiter, the beginning of the string will contain a separate
+line that looks like this: "//[delimiter]\n[numbers...]". For example, "//;\n1;2" where
+the delimiter is ";" should return 3.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Calling add with a negative number will throw an exception: "negative numbers not
+allowed <negative_number>". 
+If there are multiple negative numbers, show all of them in the exception
+message, separated by commas.
+   
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Deployed Url: https://string-calculator-five.vercel.app/
